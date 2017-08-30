@@ -1,0 +1,34 @@
+//- --------------------------------------------------------
+//- Clearfix
+//- --------------------------------------------------------
+
+cf()
+  &::after
+    content ""
+    display block
+    clear both
+
+//- --------------------------------------------------------
+//- Cache MediaQueries
+//- --------------------------------------------------------
+
+media($condition)
+  helper($condition)
+    unless $media_cache[$condition]
+      $media_cache[$condition] = ()
+    push($media_cache[$condition], block)
+
+  +helper($condition)
+    {selector() + ''}
+      {block}
+
+//- --------------------------------------------------------
+//- Apply MediaQueries
+//- --------------------------------------------------------
+
+dump_media_cache()
+  for $media_alias, $media_query in $media_aliases
+    $blocks = $media_cache[$media_alias]
+    @media $media_query
+      for $block in $blocks
+        {$block}

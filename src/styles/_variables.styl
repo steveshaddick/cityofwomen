@@ -1,0 +1,45 @@
+
+/*
+******************
+PATHS
+******************
+*/
+$assets_path = '/assets/'
+$img_path = $assets_path+'images/'
+
+
+/*
+******************
+COLOURS
+******************
+*/
+
+
+
+//- --------------------------------------------------------
+//- Sizes 
+//- --------------------------------------------------------
+
+
+
+//- --------------------------------------------------------
+//- Media Queries (based on bootstrap breakpoints)
+//- --------------------------------------------------------
+
+// No breakpoint = portrait phones, up to 575px
+$small_device = 576px // landscape phones, 576px and up
+$medium_device = 768px // tablets, 768px and up
+$large_device = 992px // desktops/landscape tablets, 992px and up
+$extra_large_device = 1200px // large desktops, 1200px and up
+
+$media_cache = {}
+$media_aliases = {
+  small: '(min-width: %s)' % $small_device
+  smallOnly: '(min-width: %s) and (max-width: %s)' % ($small_device ($medium_device - 1))
+  medium: '(min-width: %s)' % $medium_device
+  mediumOnly: '(min-width: %s) and (max-width: %s)' % ($medium_device ($large_device - 1))
+  large: '(min-width: %s)' % $large_device
+  largeOnly: '(min-width: %s) and (max-width: %s)' % ($large_device ($extra_large_device - 1))
+  xlarge: '(min-width: %s)' % $extra_large_device
+  xlargeOnly: '(min-width: %s)' % $extra_large_device
+}

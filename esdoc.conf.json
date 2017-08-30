@@ -1,0 +1,13 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "includes": ["\\.(js|jsx)$"],
+  "excludes": ["bower_components"],
+  "test": {
+    "type": "mocha",
+    "source": "./test"
+  },
+  "plugins": [
+    {"name": "esdoc-es7-plugin"}
+  ]
+}
